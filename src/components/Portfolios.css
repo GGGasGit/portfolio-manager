@@ -1,0 +1,118 @@
+/* PORTFOLIOS SETTINGS STYLES */
+
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+.portfolio-settings-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio-management {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.portfolio-settings {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.select-portfolio-sign, .add-portfolio-sign, .rename-portfolio-sign, .close-portfolio-sign, .delete-portfolio-sign, .add-asset-sign, .portfolio-setting-sign, .portfolio-question-sign {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.add-portfolio-sign, .rename-portfolio-sign, .close-portfolio-sign, .delete-portfolio-sign, .add-asset-sign, .portfolio-question-sign {
+    padding-left: 1rem;
+}
+
+.select-portfolio-sign:hover, .add-portfolio-sign:hover, .rename-portfolio-sign:hover, .close-portfolio-sign:hover, .delete-portfolio-sign:hover, .add-asset-sign:hover, .portfolio-setting-sign:hover, .portfolio-question-sign:hover {
+    color: black;
+}
+
+/* PORTFOLIOS TOTALS STYLES */
+
+.portfolio-name {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-totals {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0 4rem;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.portfolio-total-value {
+    font-size: 1.8rem;
+}
+
+.portfolio-total-yield {
+    font-size: 1.8rem;
+    color: green;
+}
+
+/* PORTFOLIO ASSETS STYLES */
+
+.portfolio-header {
+    display: grid;
+    grid-template-columns: 2fr 4fr 4fr;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.portfolio-assets {
+    display: flex;
+    flex-direction: column;
+}
+
+.asset-container {
+    display: grid;
+    grid-template-columns: 1.5fr 4fr 4fr 0.5fr;
+    border-bottom: 0.1rem solid var(--secondary-color);
+    padding: 1.6rem 0.4rem;
+    margin-bottom: 0.1rem;
+}
+
+.asset-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.2rem;
+}
+
+.asset-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.asset-name {
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+}
+
+.asset-property {
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.2rem;
+    color: green;
+    font-family: "Open Sans", Arial, sans-serif;
+    align-items: flex-end;
+    padding-right: 0.8rem;
+}
+
+.asset-settings {
+    font-size: 1.4rem;
+    cursor: pointer;
+}

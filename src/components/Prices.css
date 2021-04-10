@@ -1,0 +1,76 @@
+/* PRICES MAIN PAGE STYLES */
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+.price-settings {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.watchlist-settings {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-symbol-sign, .price-setting-sign, .price-question-sign {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.price-question-sign {
+    padding-left: 1rem;
+}
+
+.add-symbol-sign:hover, .price-setting-sign:hover, .price-question-sign:hover {
+    color: black;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.1rem;
+    border-bottom: 0.1rem solid var(--secondary-color);
+    padding: 2rem 3rem 2rem 2rem;
+}
+
+.ticker-symbol {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.ticker-name {
+    font-size: 1.2rem;
+}
+
+.ticker-price {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+}
+
+.price-item:nth-of-type(odd) {
+    color: red;
+}
+
+.price-item:nth-of-type(even) {
+    color: green;
+}
+
+.ticker {
+    display: flex;
+    color: black;
+}
+
+.ticker-image {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
