@@ -4,6 +4,8 @@
   --primary-color: rgb(144, 153, 161);
   --secondary-color: rgba(230, 230, 230, 0.95);
   --border-color: rgb(205, 213, 221);
+  --popup-top-offset: 5%;
+  --popup-left-offset: 50%;
   font-size: 10px;
 }
 

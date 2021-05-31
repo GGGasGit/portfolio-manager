@@ -4,7 +4,13 @@ import React, { Component } from 'react';
 export default class PricesSettings extends Component {
 
     state = {
-        selectedCurrency: "EUR"
+        selectedCurrency: ""
+    }
+
+    componentDidMount() {
+        this.setState({
+            selectedCurrency: this.props.loggedInUser.base_currency,
+        });
     }
 
     handleSelectCurrency = (e) => {
@@ -15,7 +21,7 @@ export default class PricesSettings extends Component {
     }
 
     handleClickOkButton = () => {
-        this.props.handlePricesCurrencyChange(this.state.selectedCurrency);
+        this.props.handleCurrencyChange(this.state.selectedCurrency);
         this.props.makePopupVisible("PricesSettings", false)
     }
 
@@ -33,7 +39,7 @@ export default class PricesSettings extends Component {
                     </div>
                     <div className="select-currency-container">
                         <label htmlFor="select-currency" className="select-currency-label">Currency: </label>
-                        <select className="select-currency-list" onChange={this.handleSelectCurrency}>
+                        <select className="select-currency-list" value={this.state.selectedCurrency} onChange={this.handleSelectCurrency}>
                             <option value="EUR">EUR</option>
                             <option value="USD">USD</option>
                         </select>

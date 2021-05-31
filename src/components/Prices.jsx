@@ -5,34 +5,75 @@ import React, { Component } from 'react';
 export default class Prices extends Component {
 
     state = {
-        icons: {},
+        watchlistDropdownValue: 0,
     }
 
     componentDidMount() {
-        let newIcons = {};
-        for (let symbol of this.props.symbols) {
-            import(`${symbol.icon}`).then(icon => {
-                newIcons[`${symbol.ticker}`] = icon.default
-                this.setState({
-                    icons: newIcons
-                })
-            }
-            )
+        this.setState({
+            watchlistDropdownValue: this.props.currentWatchlist
+        });
+    }
+
+    componentDidUpdate() {
+        if (this.props.currentWatchlist !== this.state.watchlistDropdownValue) {
+            this.setState({
+                watchlistDropdownValue: this.props.currentWatchlist,
+            });
+        }
+    }
+
+    handleWatchlistDropdownChange = (e) => {
+        const value = Number.parseInt(e.target.value, 10);
+        this.setState({
+            watchlistDropdownValue: value,
+        });
+        this.props.setCurrentIndex(value, "watchlist");
+    }
+
+    idToIndexConverter = (id) => {
+        return this.props.loggedInUser.watchlists.findIndex(watchlist => watchlist.id === id);
+    }
+
+    handleSortColumn = (colNum) => {
+        switch (colNum) {
+            case 0:
+                this.props.handleDataSort(0, "prices", this.props.dataSort.prices.isUp, "symbol");
+                break;
+            case 1:
+                if (this.props.dataSort.prices.index === 1 && this.props.dataSort.prices.isUp) {
+                    this.props.handleDataSort(1, "prices", true, "price_eur");
+                } else if (this.props.dataSort.prices.index === 1 && !this.props.dataSort.prices.isUp) {
+                    this.props.handleDataSort(2, "prices", false, "price_change");
+                } else if (this.props.dataSort.prices.index === 2 && this.props.dataSort.prices.isUp) {
+                    this.props.handleDataSort(2, "prices", true, "price_change");
+                } else {
+                    this.props.handleDataSort(1, "prices", false, "price_eur");
+                }
+                break;
+            default:
+                this.props.handleDataSort(0, "prices", false, "symbol");
         }
     }
 
     render() {
 
-        const symbols = [...this.props.symbols]
-            .map((symbol, i) => <div className="price-item" key={i}>
+        const watchlistDropdown = this.props.loggedInUser.watchlists
+            .map(watchlist => <option value={this.idToIndexConverter(watchlist.id)} key={watchlist.id}>{watchlist.name}</option>);
+
+        const coins = this.props.loggedInUser.watchlists.length === 0 ? "" : this.props.coinListCreator()
+            .sort(this.props.compareFunction(this.props.dataSort.prices.sortProperty, this.props.dataSort.prices.isUp))
+            .map(coin => <div className="price-item" key={coin.coinId}>
                 <div className="ticker">
-                    <div className="ticker-image"><img src={this.state.icons[`${symbol.ticker}`]} alt={`${symbol.ticker} icon`} /></div>
+                    <div className="ticker-image"><img src={coin.logo} alt={`${coin.symbol} icon`} /></div>
                     <div>
-                        <p className="ticker-symbol">{`${symbol.ticker}`}</p>
-                        <p className="ticker-name">{`${symbol.name}`}</p>
+                        <p className="ticker-symbol">{`${coin.symbol}`}</p>
+                        <p className="ticker-name">{`${coin.coinName}`}</p>
                     </div>
                 </div>
-                <div className="ticker-price">{`€ ${symbol.price.toLocaleString('en-GB')}`}</div>
+                <div className="watchlist-price">
+                    <p className={`ticker-price ${this.props.priceColorSetter(coin.price_change)}`}>{this.props.priceConverter(coin)}</p>
+                    <p className={`ticker-price-change ${this.props.priceColorSetter(coin.price_change)}`}>{coin.price_change} %</p>
+                </div>
             </div>
             );
 
@@ -40,14 +81,22 @@ export default class Prices extends Component {
             <div className="price-container">
                 <div className="price-settings">
                     <div className="watchlist-management">
-                        <p className="add-symbol-sign"><i className="fa fa-plus-square" aria-hidden="true"></i></p>
+                        <p className="add-watchlist-sign"><i className="fa fa-plus-square" aria-hidden="true" onClick={() => this.props.makePopupVisible("AddWatchlist", true)}></i></p>
+                        <p className="edit-watchlist-sign"><i className="fa fa fa-pencil" aria-hidden="true" onClick={() => this.props.makePopupVisible("EditWatchlist", true)}></i></p>
+                        <select name="watchlist-dropdown" className="watchlist-dropdown" value={this.state.watchlistDropdownValue} onChange={this.handleWatchlistDropdownChange} >{watchlistDropdown}</select>
                     </div>
                     <div className="watchlist-settings">
                         <p className="price-setting-sign"><i className="fa fa-cog" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesSettings", true)}></i></p>
                         <p className="price-question-sign"><i className="fa fa-question-circle" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesGuide", true)}></i></p>
                     </div>
                 </div>
-                {symbols}
+                <div className="watchlist-header">
+                    <p className="sortable-column" onClick={() => this.handleSortColumn(0)}>{`${this.props.dataSort.prices.arrows[0]} Coin`}</p>
+                    <p className="sortable-column" onClick={() => this.handleSortColumn(1)}>{`${this.props.dataSort.prices.arrows[1]} Price/Change ${this.props.dataSort.prices.arrows[2]}`}</p>
+                </div>
+                <div className="watchlist-assets">
+                    {coins}
+                </div>
             </div>
         )
     }

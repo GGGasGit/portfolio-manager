@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 export default class PricesGuide extends Component {
 
     render() {
+        //console.log(this.props.loggedInUser)
 
         return (
             <div className="guide-background">
@@ -13,6 +14,7 @@ export default class PricesGuide extends Component {
                     </div>
                     <div className="guide-text">
                         <h2>Prices Guide</h2>
+                        <p>{this.props.loggedInUser.name}</p>
                     </div>
                 </div>
             </div>
