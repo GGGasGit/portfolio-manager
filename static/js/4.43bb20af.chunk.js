@@ -1,2 +1,0 @@
-(this["webpackJsonpportfolio-manager"]=this["webpackJsonpportfolio-manager"]||[]).push([[4],{34:function(t,a,o){"use strict";o.r(a),a.default=o.p+"static/media/btc.93237c24.svg"}}]);
-//# sourceMappingURL=4.43bb20af.chunk.js.map

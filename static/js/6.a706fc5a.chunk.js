@@ -1,2 +1,0 @@
-(this["webpackJsonpportfolio-manager"]=this["webpackJsonpportfolio-manager"]||[]).push([[6],{36:function(t,s,a){"use strict";a.r(s),s.default=a.p+"static/media/usdt.b8dd2f54.svg"}}]);
-//# sourceMappingURL=6.a706fc5a.chunk.js.map
