@@ -69,14 +69,14 @@
     display: grid;
     grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
 }
 
 .edit-asset-details-transactions-container {
     display: flex;
     flex-direction: column;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-right: 1.2rem;
 }
 
