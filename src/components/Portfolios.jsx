@@ -76,7 +76,7 @@ export default class Portfolios extends Component {
 
         const currentPortfolio = this.props.loggedInUser.portfolios[this.props.currentPortfolio];
 
-        const portfolioTitle = <p className="portfolio-name"><i className="fa fa-money buysell-sign" aria-hidden="true" onClick={() => this.props.makePopupVisible("BuySellAsset", true)}></i>{currentPortfolio.name}</p>;
+        const portfolioTitle = <p className="portfolio-name"><i className="fa fa-money page-menu-sign" aria-hidden="true" onClick={() => this.props.makePopupVisible("BuySellAsset", true)}></i>{currentPortfolio.name}</p>;
 
         const portfolioDropdown = this.props.loggedInUser.portfolios.map(portfolio => <option value={this.idToIndexConverter(portfolio.id)} key={portfolio.id}>{portfolio.name}</option>);
 
@@ -137,17 +137,13 @@ export default class Portfolios extends Component {
         }
 
         return (
-            <div className="portfolio-container">
-                <div className="portfolio-settings-container">
-                    <div className="portfolio-management">
-                        <p className="add-portfolio-sign"><i className="fa fa-plus-square" aria-hidden="true" onClick={() => this.props.makePopupVisible("AddPortfolio", true)}></i></p>
-                        <p className="edit-portfolio-sign"><i className="fa fa-pencil" aria-hidden="true" onClick={() => this.props.makePopupVisible("EditPortfolio", true)}></i></p>
-                        <select name="portfolio-dropdown" className="portfolio-dropdown" value={this.state.portfolioDropdownValue} onChange={this.handlePortfolioDropdownChange}>{portfolioDropdown}</select>
-                    </div>
-                    <div className="portfolio-settings">
-                        <p className="portfolio-setting-sign"><i className="fa fa-cog" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesSettings", true)}></i></p>
-                        <p className="portfolio-question-sign"><i className="fa fa-question-circle" aria-hidden="true" onClick={() => this.props.makePopupVisible("PortfoliosGuide", true)}></i></p>
-                    </div>
+            <div className="page-menu-container">
+                <div className="page-menu-settings-container">
+                        <p className="page-menu-sign"><i className="fa fa-plus-square" aria-hidden="true" onClick={() => this.props.makePopupVisible("AddPortfolio", true)}></i></p>
+                        <p className="page-menu-sign"><i className="fa fa-pencil" aria-hidden="true" onClick={() => this.props.makePopupVisible("EditPortfolio", true)}></i></p>
+                        <select name="portfolio-dropdown" className="page-menu-dropdown" value={this.state.portfolioDropdownValue} onChange={this.handlePortfolioDropdownChange}>{portfolioDropdown}</select>
+                        <p className="page-menu-sign"><i className="fa fa-cog" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesSettings", true)}></i></p>
+                        <p className="page-menu-sign page-menu-question-sign"><i className="fa fa-question-circle" aria-hidden="true" onClick={() => this.props.makePopupVisible("PortfoliosGuide", true)}></i></p>
                 </div>
                 {portfolioTitle}
                 {portfolioTotals(this.props.loggedInUser.portfolios[this.props.currentPortfolio].assets)}

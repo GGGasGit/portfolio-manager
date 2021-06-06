@@ -1,4 +1,4 @@
-import './EditPortfolio.css';
+import './EditPopups.css';
 import React, { Component } from 'react';
 import RenamePortfolio from './RenamePortfolio';
 import DeletePortfolio from './DeletePortfolio';
@@ -19,8 +19,8 @@ export default class EditPortfolio extends Component {
     render() {
 
         let Page = "";
-        let renameClass = "edit-portfolio-menu-item";
-        let deleteClass = "edit-portfolio-menu-item";
+        let renameClass = "popup-menu-item";
+        let deleteClass = "popup-menu-item";
 
         if (this.state.page === "Rename") {
             Page = <RenamePortfolio errorMessage={this.props.errorMessage}
@@ -30,8 +30,8 @@ export default class EditPortfolio extends Component {
                 makePopupVisible={this.props.makePopupVisible}
                 renamePortfolio={this.props.renamePortfolio}
             />
-            renameClass = "edit-portfolio-menu-item edit-portfolio-menu-item-active";
-            deleteClass = "edit-portfolio-menu-item";
+            renameClass = "popup-menu-item popup-menu-item-active";
+            deleteClass = "popup-menu-item";
         }
 
         if (this.state.page === "Delete") {
@@ -41,22 +41,22 @@ export default class EditPortfolio extends Component {
                 makePopupVisible={this.props.makePopupVisible}
                 deletePortfolio={this.props.deletePortfolio}
             />
-            renameClass = "edit-portfolio-menu-item";
-            deleteClass = "edit-portfolio-menu-item edit-portfolio-menu-item-active";
+            renameClass = "popup-menu-item";
+            deleteClass = "popup-menu-item popup-menu-item-active";
         }
 
         return (
-            <div className="edit-portfolio-background">
-                <div className="edit-portfolio-popup">
-                    <div className="edit-portfolio-popup-title">
-                        <p className="edit-portfolio-popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
-                        <p>Edit portfolio - {this.props.loggedInUser.portfolios[this.props.currentPortfolio].name}</p>
+            <div className="popup-background">
+                <div className="popup-foreground">
+                    <div className="popup-title">
+                        <p className="popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
+                        <p>Edit Portfolio - {this.props.loggedInUser.portfolios[this.props.currentPortfolio].name}</p>
                     </div>
-                    <div className="edit-portfolio-popup-description">
+                    <div className="popup-description">
                         <p>You can rename or delete the current portfolio.</p>
                     </div>
                     <nav>
-                        <ul className="edit-portfolio-menu-container">
+                        <ul className="popup-menu-container">
                             
                             <li className={renameClass} onClick={() => this.handleTabChange("Rename")}>Rename</li>
                             <li className={deleteClass} onClick={() => this.handleTabChange("Delete")}>Delete</li>

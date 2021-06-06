@@ -38,17 +38,17 @@ export default class RenamePortfolio extends Component {
 
         return (
             <div>
-                <div className="edit-portfolio-input-container">
-                    <div className="edit-portfolio-input-description">
-                        <h2 className="edit-portfolio-input-description-title">Rename portfolio</h2>
-                        <p className="edit-portfolio-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Rename portfolio</h2>
+                        <p className="edit-popup-input-description-text">
                             To rename the portfolio, edit the name in the Name field, then click Rename.
                         </p>
                     </div>
-                    <div className="edit-portfolio-input">
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="name-input">Name</label>
-                            <input type="text" name="name-input" className="edit-portfolio-input-field"
+                    <div className="edit-popup-input">
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="name-input">Name</label>
+                            <input type="text" name="name-input" className="edit-popup-input-field"
                                 value={this.state.portfolioName}
                                 onChange={this.handleNameInputChange} >
                             </input>
@@ -56,9 +56,9 @@ export default class RenamePortfolio extends Component {
                     </div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-portfolio-button-container">
-                    <button type="button" className="edit-portfolio-button" onClick={this.handleClickRenameButton}>Rename</button>
-                    <button type="button" className="edit-portfolio-button" onClick={this.handleClickCloseButton}>Close</button>
+                <div className="popup-button-container">
+                    <button type="button" className="popup-button" onClick={this.handleClickRenameButton}>Rename</button>
+                    <button type="button" className="popup-button" onClick={this.handleClickCloseButton}>Close</button>
                 </div>
             </div>
         )

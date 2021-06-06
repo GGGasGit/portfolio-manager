@@ -1,4 +1,4 @@
-import './AddPortfolio.css';
+import './AddPopups.css';
 import React, { Component } from 'react';
 
 export default class AddPortfolio extends Component {
@@ -27,25 +27,25 @@ export default class AddPortfolio extends Component {
         const errorMessage = (this.props.errorMessage) ? this.props.errorMessage : ""
 
         return (
-            <div className="add-portfolio-background">
-                <div className="add-portfolio-popup">
-                    <div className="add-portfolio-popup-title">
-                        <p className="add-portfolio-popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
+            <div className="popup-background">
+                <div className="popup-foreground">
+                    <div className="popup-title">
+                        <p className="popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
                         <p>Add Portfolio</p>
                     </div>
-                    <div className="add-portfolio-popup-description">
+                    <div className="popup-description">
                         <p>Enter a name for your new portfolio, then click Add. Click Cancel to close the dialogue without adding a new portfolio.</p>
                     </div>
-                    <div className="add-portfolio-input-container">
-                        <div className="add-portfolio-input">
-                            <label htmlFor="portfolio-name" className="portfolio-name-label">Portfolio name</label>
-                            <input type="text" className="portfolio-name-input" name="portfolio-name" onChange={this.handleInputChange}></input>
+                    <div className="add-popup-input-container">
+                        <div className="add-popup-input">
+                            <label htmlFor="portfolio-name" className="add-popup-name-label">Portfolio name</label>
+                            <input type="text" className="add-popup-name-input" name="portfolio-name" onChange={this.handleInputChange}></input>
                         </div>
                         <p className="error-text">{errorMessage}</p>
                     </div>
-                    <div className="add-portfolio-button-container">
-                        <button type="button" className="add-portfolio-button" onClick={this.handleClickAddButton}>Add</button>
-                        <button type="button" className="add-portfolio-button" onClick={this.handleClickCancelButton}>Cancel</button>
+                    <div className="popup-button-container">
+                        <button type="button" className="popup-button" onClick={this.handleClickAddButton}>Add</button>
+                        <button type="button" className="popup-button" onClick={this.handleClickCancelButton}>Cancel</button>
                     </div>
                 </div>
             </div>

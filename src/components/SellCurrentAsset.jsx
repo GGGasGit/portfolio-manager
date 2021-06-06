@@ -90,37 +90,37 @@ export default class SellCurrentAsset extends Component {
 
         return (
             <div>
-                <div className="edit-portfolio-input-container">
-                    <div className="edit-portfolio-input-description">
-                        <h2 className="edit-portfolio-input-description-title">Sell asset</h2>
-                        <p className="edit-portfolio-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Sell asset</h2>
+                        <p className="edit-popup-input-description-text">
                             To sell the asset, change the quantity, price and date as necessary, then click Sell.
                         </p>
                     </div>
-                    <div className="edit-portfolio-input">
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="ticker-list">Coin</label>
-                            <input type="text" name="ticker-input" className="edit-portfolio-input-field" value={this.state.symbol} readOnly></input>
+                    <div className="edit-popup-input">
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="ticker-list">Coin</label>
+                            <input type="text" name="ticker-input" className="edit-popup-input-field" value={this.state.symbol} readOnly></input>
                         </div>
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="quantity-input">Quantity</label>
-                            <input type="number" name="quantity-input" className="edit-portfolio-input-field" min="0"
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="quantity-input">Quantity</label>
+                            <input type="number" name="quantity-input" className="edit-popup-input-field" min="0"
                                 step={`1e-${this.props.coinFinder(currentAsset.coin_id).quantity_scale}`}
                                 value={this.state.quantity}
                                 onChange={this.handleQuantityInputChange}>
                             </input>
                         </div>
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="buyprice-input">Price (€)</label>
-                            <input type="number" name="buyprice-input" className="edit-portfolio-input-field" min="0"
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="buyprice-input">Price (€)</label>
+                            <input type="number" name="buyprice-input" className="edit-popup-input-field" min="0"
                                 step={`1e-${this.props.coinFinder(currentAsset.coin_id).price_scale}`}
                                 value={this.state.price}
                                 onChange={this.handlePriceInputChange}>
                             </input>
                         </div>
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="buydate-input">Date</label>
-                            <input type="date" name="buydate-input" className="edit-portfolio-input-field" min="2010-01-01"
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="buydate-input">Date</label>
+                            <input type="date" name="buydate-input" className="edit-popup-input-field" min="2010-01-01"
                                 value={this.state.date}
                                 onChange={this.handleDateInputChange}>
                             </input>
@@ -128,9 +128,9 @@ export default class SellCurrentAsset extends Component {
                     </div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-portfolio-button-container">
-                    <button type="button" className="edit-portfolio-button" onClick={this.handleClickSellButton}>Sell</button>
-                    <button type="button" className="edit-portfolio-button" onClick={() => this.props.makePopupVisible("EditAsset", false)}>Close</button>
+                <div className="popup-button-container">
+                    <button type="button" className="popup-button" onClick={this.handleClickSellButton}>Sell</button>
+                    <button type="button" className="popup-button" onClick={() => this.props.makePopupVisible("EditAsset", false)}>Close</button>
                 </div>
             </div>
         )

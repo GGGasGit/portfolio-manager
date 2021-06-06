@@ -78,17 +78,13 @@ export default class Prices extends Component {
             );
 
         return (
-            <div className="price-container">
-                <div className="price-settings">
-                    <div className="watchlist-management">
-                        <p className="add-watchlist-sign"><i className="fa fa-plus-square" aria-hidden="true" onClick={() => this.props.makePopupVisible("AddWatchlist", true)}></i></p>
-                        <p className="edit-watchlist-sign"><i className="fa fa fa-pencil" aria-hidden="true" onClick={() => this.props.makePopupVisible("EditWatchlist", true)}></i></p>
-                        <select name="watchlist-dropdown" className="watchlist-dropdown" value={this.state.watchlistDropdownValue} onChange={this.handleWatchlistDropdownChange} >{watchlistDropdown}</select>
-                    </div>
-                    <div className="watchlist-settings">
-                        <p className="price-setting-sign"><i className="fa fa-cog" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesSettings", true)}></i></p>
-                        <p className="price-question-sign"><i className="fa fa-question-circle" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesGuide", true)}></i></p>
-                    </div>
+            <div className="page-menu-container">
+                <div className="page-menu-settings-container">
+                        <p className="page-menu-sign"><i className="fa fa-plus-square" aria-hidden="true" onClick={() => this.props.makePopupVisible("AddWatchlist", true)}></i></p>
+                        <p className="page-menu-sign"><i className="fa fa-pencil" aria-hidden="true" onClick={() => this.props.makePopupVisible("EditWatchlist", true)}></i></p>
+                        <select name="watchlist-dropdown" className="page-menu-dropdown" value={this.state.watchlistDropdownValue} onChange={this.handleWatchlistDropdownChange} >{watchlistDropdown}</select>
+                        <p className="page-menu-sign"><i className="fa fa-cog" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesSettings", true)}></i></p>
+                        <p className="page-menu-sign page-menu-question-sign"><i className="fa fa-question-circle" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesGuide", true)}></i></p>
                 </div>
                 <div className="watchlist-header">
                     <p className="sortable-column" onClick={() => this.handleSortColumn(0)}>{`${this.props.dataSort.prices.arrows[0]} Coin`}</p>

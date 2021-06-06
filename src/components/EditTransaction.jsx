@@ -88,47 +88,47 @@ export default class EditTransaction extends Component {
         const errorMessage = (this.props.errorMessage) ? this.props.errorMessage : "";
 
         return (
-            <div className="edit-portfolio-background">
-                <div className="edit-portfolio-popup">
-                    <div className="edit-portfolio-popup-title">
-                        <p className="edit-portfolio-popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
-                        <p>Edit transaction - {this.state.symbol} / {this.state.buysell}</p>
+            <div className="popup-background">
+                <div className="popup-foreground">
+                    <div className="popup-title">
+                        <p className="popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
+                        <p>Edit Transaction - {this.state.symbol} / {this.state.buysell}</p>
                     </div>
-                    <div className="edit-portfolio-input-container">
-                        <div className="edit-portfolio-input-description">
-                            <h2 className="edit-portfolio-input-description-title">Edit transaction</h2>
-                            <p className="edit-portfolio-input-description-text">
+                    <div className="edit-popup-input-container">
+                        <div className="edit-popup-input-description">
+                            <h2 className="edit-popup-input-description-title">Edit transaction</h2>
+                            <p className="edit-popup-input-description-text">
                                 To edit the transaction, change the quantity, price and date as necessary, then click Edit.
                         </p>
                         </div>
-                        <div className="edit-portfolio-input">
-                            <div className="edit-portfolio-input-item">
-                                <label className="edit-portfolio-input-label" htmlFor="ticker-input">Coin</label>
-                                <input type="text" name="ticker-input" className="edit-portfolio-input-field" value={this.state.symbol} readOnly></input>
+                        <div className="edit-popup-input">
+                            <div className="edit-popup-input-item">
+                                <label className="edit-popup-input-label" htmlFor="ticker-input">Coin</label>
+                                <input type="text" name="ticker-input" className="edit-popup-input-field" value={this.state.symbol} readOnly></input>
                             </div>
-                            <div className="edit-portfolio-input-item">
-                                <label className="edit-portfolio-input-label" htmlFor="buysell-input">Buy/Sell</label>
-                                <input type="text" name="buysell-input" className="edit-portfolio-input-field" value={this.state.buysell} readOnly></input>
+                            <div className="edit-popup-input-item">
+                                <label className="edit-popup-input-label" htmlFor="buysell-input">Buy/Sell</label>
+                                <input type="text" name="buysell-input" className="edit-popup-input-field" value={this.state.buysell} readOnly></input>
                             </div>
-                            <div className="edit-portfolio-input-item">
-                                <label className="edit-portfolio-input-label" htmlFor="quantity-input">Quantity</label>
-                                <input type="number" name="quantity-input" className="edit-portfolio-input-field" min="0"
+                            <div className="edit-popup-input-item">
+                                <label className="edit-popup-input-label" htmlFor="quantity-input">Quantity</label>
+                                <input type="number" name="quantity-input" className="edit-popup-input-field" min="0"
                                     step={`1e-${this.state.quantity_scale}`}
                                     value={this.state.quantity}
                                     onChange={this.handleQuantityInputChange}>
                                 </input>
                             </div>
-                            <div className="edit-portfolio-input-item">
-                                <label className="edit-portfolio-input-label" htmlFor="price-input">Price</label>
-                                <input type="number" name="price-input" className="edit-portfolio-input-field" min="0"
+                            <div className="edit-popup-input-item">
+                                <label className="edit-popup-input-label" htmlFor="price-input">Price</label>
+                                <input type="number" name="price-input" className="edit-popup-input-field" min="0"
                                     step={`1e-${this.state.price_scale}`}
                                     value={this.state.price}
                                     onChange={this.handlePriceInputChange}>
                                 </input>
                             </div>
-                            <div className="edit-portfolio-input-item">
-                                <label className="edit-portfolio-input-label" htmlFor="date-input">Date</label>
-                                <input type="date" name="date-input" className="edit-portfolio-input-field" min="2010-01-01"
+                            <div className="edit-popup-input-item">
+                                <label className="edit-popup-input-label" htmlFor="date-input">Date</label>
+                                <input type="date" name="date-input" className="edit-popup-input-field" min="2010-01-01"
                                     value={this.state.date}
                                     onChange={this.handleDateInputChange}>
                                 </input>
@@ -136,9 +136,9 @@ export default class EditTransaction extends Component {
                         </div>
                         <p className="error-text">{errorMessage}</p>
                     </div>
-                    <div className="edit-portfolio-button-container">
-                        <button type="button" className="edit-portfolio-button" onClick={this.handleClickEditButton}>Edit</button>
-                        <button type="button" className="edit-portfolio-button" onClick={() => this.props.makePopupVisible("EditTransaction", false)}>Close</button>
+                    <div className="popup-button-container">
+                        <button type="button" className="popup-button" onClick={this.handleClickEditButton}>Edit</button>
+                        <button type="button" className="popup-button" onClick={() => this.props.makePopupVisible("EditTransaction", false)}>Close</button>
                     </div>
                 </div>
             </div>

@@ -16,10 +16,10 @@ export default class AssetDetails extends Component {
 
         return (
             <div>
-                <div className="edit-asset-input-container">
-                    <div className="edit-asset-input-description">
-                        <h2 className="edit-asset-input-description-title">Asset details</h2>
-                        <p className="edit-asset-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Asset details</h2>
+                        <p className="edit-popup-input-description-text">
                             This page shows you all the details of this asset, its transactions and profit/loss.
                         </p>
                     </div>
@@ -87,9 +87,9 @@ export default class AssetDetails extends Component {
                     </div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-asset-button-container">
+                <div className="popup-button-container">
                     <p></p>
-                    <button type="button" className="edit-asset-button" onClick={() => this.props.makePopupVisible("EditAsset", false)}>Close</button>
+                    <button type="button" className="popup-button" onClick={() => this.props.makePopupVisible("EditAsset", false)}>Close</button>
                 </div>
             </div>
         )

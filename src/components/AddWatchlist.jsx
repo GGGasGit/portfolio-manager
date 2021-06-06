@@ -1,4 +1,4 @@
-import './AddWatchlist.css';
+import './AddPopups.css';
 import React, { Component } from 'react';
 
 export default class AddWatchlist extends Component {
@@ -27,25 +27,25 @@ export default class AddWatchlist extends Component {
         const errorMessage = (this.props.errorMessage) ? this.props.errorMessage : ""
 
         return (
-            <div className="add-watchlist-background">
-                <div className="add-watchlist-popup">
-                    <div className="add-watchlist-popup-title">
-                        <p className="add-watchlist-popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
+            <div className="popup-background">
+                <div className="popup-foreground">
+                    <div className="popup-title">
+                        <p className="popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
                         <p>Add Watchlist</p>
                     </div>
-                    <div className="add-watchlist-popup-description">
+                    <div className="popup-description">
                         <p>Enter a name for your new watchlist, then click Add. Click Cancel to close the dialogue without adding a new watchlist.</p>
                     </div>
-                    <div className="add-watchlist-input-container">
-                        <div className="add-watchlist-input">
-                            <label htmlFor="watchlist-name" className="watchlist-name-label">Watchlist name</label>
-                            <input type="text" className="watchlist-name-input" name="watchlist-name" onChange={this.handleInputChange}></input>
+                    <div className="add-popup-input-container">
+                        <div className="add-popup-input">
+                            <label htmlFor="watchlist-name" className="add-popup-name-label">Watchlist name</label>
+                            <input type="text" className="add-popup-name-input" name="watchlist-name" onChange={this.handleInputChange}></input>
                         </div>
                         <p className="error-text">{errorMessage}</p>
                     </div>
-                    <div className="add-watchlist-button-container">
-                        <button type="button" className="add-watchlist-button" onClick={this.handleClickAddButton}>Add</button>
-                        <button type="button" className="add-watchlist-button" onClick={this.handleClickCancelButton}>Cancel</button>
+                    <div className="popup-button-container">
+                        <button type="button" className="popup-button" onClick={this.handleClickAddButton}>Add</button>
+                        <button type="button" className="popup-button" onClick={this.handleClickCancelButton}>Cancel</button>
                     </div>
                 </div>
             </div>

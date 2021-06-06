@@ -8,6 +8,7 @@
   bottom: 0;
   background-color: rgba(0,0,0,0.8);
   z-index: 0;
+  overflow: auto;
 }
 
 .guide-popup {
@@ -21,4 +22,31 @@
   align-self: flex-end;
   font-size: 2rem;
   cursor: pointer;
+}
+
+.guide-main-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.guide-page-header {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.guide-subheader {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.guide-normal-text {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.guide-list {
+  font-size: 1.2rem;
+  list-style-position: inside;
 }

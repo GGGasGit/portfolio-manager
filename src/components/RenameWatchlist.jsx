@@ -38,17 +38,17 @@ export default class RenameWatchlist extends Component {
 
         return (
             <div>
-                <div className="edit-watchlist-input-container">
-                    <div className="edit-watchlist-input-description">
-                        <h2 className="edit-watchlist-input-description-title">Rename watchlist</h2>
-                        <p className="edit-watchlist-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Rename watchlist</h2>
+                        <p className="edit-popup-input-description-text">
                             To rename the watchlist, edit the name in the Name field, then click Rename.
                         </p>
                     </div>
-                    <div className="edit-watchlist-input">
-                        <div className="edit-watchlist-input-item">
-                            <label className="edit-watchlist-input-label" htmlFor="name-input">Name</label>
-                            <input type="text" name="name-input" className="edit-watchlist-input-field"
+                    <div className="edit-popup-input">
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="name-input">Name</label>
+                            <input type="text" name="name-input" className="edit-popup-input-field"
                                 value={this.state.watchlistName}
                                 onChange={this.handleNameInputChange} >
                             </input>
@@ -56,9 +56,9 @@ export default class RenameWatchlist extends Component {
                     </div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-watchlist-button-container">
-                    <button type="button" className="edit-watchlist-button" onClick={this.handleClickRenameButton}>Rename</button>
-                    <button type="button" className="edit-watchlist-button" onClick={this.handleClickCloseButton}>Close</button>
+                <div className="popup-button-container">
+                    <button type="button" className="popup-button" onClick={this.handleClickRenameButton}>Rename</button>
+                    <button type="button" className="popup-button" onClick={this.handleClickCloseButton}>Close</button>
                 </div>
             </div>
         )

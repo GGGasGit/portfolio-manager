@@ -17,15 +17,15 @@ export default class Transactions extends Component {
             if (this.props.transactionQuantityChecker(checkedTransactions)) {
                 alert(`This transaction cannot be deleted, only modified. The total quantity of the asset at the date of the transaction would be less than zero after deleting it.`);
             } else {
+                this.props.deleteTransaction(transaction.id);
                 if (currentPortfolio.transactions.length === 1) {
                     this.props.makePopupVisible("EditAsset", false);
-                    this.props.deleteTransaction(transaction.id);
                 }
             }
         } else {
+            this.props.deleteTransaction(transaction.id);
             if (currentPortfolio.transactions.length === 1) {
                 this.props.makePopupVisible("EditAsset", false);
-                this.props.deleteTransaction(transaction.id);
             }
         }
     }
@@ -57,10 +57,10 @@ export default class Transactions extends Component {
 
         return (
             <div>
-                <div className="edit-asset-input-container">
-                    <div className="edit-asset-input-description">
-                        <h2 className="edit-asset-input-description-title">Transactions</h2>
-                        <p className="edit-asset-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Transactions</h2>
+                        <p className="edit-popup-input-description-text">
                             This page shows you all the transactions you made in this asset.
                             You can also modify or delete a transaction here.
                         </p>
@@ -81,9 +81,9 @@ export default class Transactions extends Component {
                     </div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-asset-button-container">
+                <div className="popup-button-container">
                     <p></p>
-                    <button type="button" className="edit-asset-button" onClick={() => this.props.makePopupVisible("EditAsset", false)}>Close</button>
+                    <button type="button" className="popup-button" onClick={() => this.props.makePopupVisible("EditAsset", false)}>Close</button>
                 </div>
             </div>
         )

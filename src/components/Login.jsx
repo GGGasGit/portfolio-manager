@@ -57,8 +57,8 @@ export default class Login extends Component {
                 </div>
 
         return (
-            <div className="login-background">
-                <div className="login-popup">
+            <div className="popup-background">
+                <div className="popup-foreground login-popup-foreground">
                     <h2 className="login-title">Crypto Portfolio Manager<br/><br/>Login</h2>
                     {loginContainer}
                 </div>

@@ -63,18 +63,18 @@ export default class ManageCoins extends Component {
 
         return (
             <div>
-                <div className="edit-watchlist-input-container">
-                    <div className="edit-watchlist-input-description">
-                        <h2 className="edit-watchlist-input-description-title">Add/remove coin</h2>
-                        <p className="edit-watchlist-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Add/remove coin</h2>
+                        <p className="edit-popup-input-description-text">
                             To add a new coin to your watchlist, select one from the dropdown, then click Add.
                             To delete a coin from your watchlist, click on the trashcan icon next to the coin you want to delete.
                         </p>
                     </div>
-                    <div className="edit-watchlist-input">
-                        <div className="edit-watchlist-input-item">
-                            <label className="watchlist-name-label" htmlFor="ticker-input">Add coin</label>
-                            <input type="text" name="ticker-input" className="edit-watchlist-input-field" list="ticker-list"
+                    <div className="edit-popup-input">
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="ticker-input">Add coin</label>
+                            <input type="text" name="ticker-input" className="edit-popup-input-field" list="ticker-list"
                                 autoComplete="off" value={this.state.symbol}
                                 onChange={this.handleSymbolInputChange}>
                             </input>
@@ -84,9 +84,9 @@ export default class ManageCoins extends Component {
                     <div className="edit-watchlist-coin-container">{watchlistItems}</div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-watchlist-button-container">
-                    <button type="button" className="edit-watchlist-button" onClick={this.handleClickAddButton}>Add</button>
-                    <button type="button" className="edit-watchlist-button" onClick={this.handleClickCloseButton}>Close</button>
+                <div className="popup-button-container">
+                    <button type="button" className="popup-button" onClick={this.handleClickAddButton}>Add</button>
+                    <button type="button" className="popup-button" onClick={this.handleClickCloseButton}>Close</button>
                 </div>
             </div>
         )

@@ -1,32 +1,22 @@
-.watchlist-name-label {
-    font-size: 1.4rem;
-    padding-right: 1rem;
-}
-
-.edit-watchlist-coin-container {
+.buy-sell-asset-container {
     padding: 1rem 1rem 1rem 3rem;
 }
 
-.edit-watchlist-coin-item {
+.buy-sell-asset-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0rem 6rem 1rem 0rem;
 }
 
-.edit-watchlist-coin-text-container {
+.buy-sell-asset-coin-text-container {
     display: flex;
     align-items: center;
     font-size: 1.4rem;
 }
 
-.edit-watchlist-coin-image {
+.buy-sell-asset-coin-image {
     width: 2rem;
     height: 2rem;
     margin-right: 1rem;
-}
-
-.edit-watchlist-delete-icon {
-    font-size: 1.6rem;
-    cursor: pointer;
 }

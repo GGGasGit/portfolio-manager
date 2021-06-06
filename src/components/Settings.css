@@ -1,58 +1,3 @@
-@keyframes open {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-.settings-background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 0;
-}
-
-.settings-popup {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    max-height: 80vh;
-    overflow: auto;
-    width: 32rem;
-    background-color: var(--border-color);
-    border: 1px solid white;
-    color: black;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.8);
-    top: var(--popup-top-offset);
-    left: var(--popup-left-offset);
-    margin-left: -16rem;
-    animation: open 0.5s;
-}
-
-.settings-popup-title {
-  display: flex;
-  font-size: 1.6rem;
-  padding: 1.4rem 0 1.2rem 1.2rem;
-  border-bottom: 0.1rem solid white;
-}
-
-.settings-popup-title-icon {
-  margin-right: 1rem;
-}
-
-.settings-popup-description {
-  font-size: 1.2rem;
-  padding: 1.2rem;
-  line-height: 1.6rem;
-}
-
 .select-currency-container {
   display: flex;
   justify-content: center;
@@ -73,31 +18,5 @@
 }
 
 .select-currency-list:focus {
-  outline: none;
-}
-
-.prices-settings-button-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 0.4rem;
-  height: 4rem;
-  padding: 0.4rem;
-}
-
-.prices-settings-button {
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-.prices-settings-button:hover {
-  background-color: var(--secondary-color);
-}
-
-.prices-settings-button:active {
-  transform: translate(0.1rem, 0.1rem);
-  box-shadow: none;
-}
-
-.prices-settings-button:focus {
   outline: none;
 }

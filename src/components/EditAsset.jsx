@@ -1,4 +1,5 @@
 import './EditAsset.css';
+import './EditPopups.css';
 import React, { Component } from 'react';
 import AssetDetails from './AssetDetails';
 import Transactions from './Transactions';
@@ -20,10 +21,10 @@ export default class EditAsset extends Component {
     render() {
 
         let Page = "";
-        let detailsClass = "edit-asset-menu-item edit-asset-menu-item-active";
-        let transactionsClass = "edit-asset-menu-item";
-        let sellClass = "edit-asset-menu-item";
-        let deleteClass = "edit-asset-menu-item";
+        let detailsClass = "popup-menu-item popup-menu-item-active";
+        let transactionsClass = "popup-menu-item";
+        let sellClass = "popup-menu-item";
+        let deleteClass = "popup-menu-item";
 
         if (this.state.page === "Details") {
             Page = <AssetDetails makePopupVisible={this.props.makePopupVisible}
@@ -52,10 +53,10 @@ export default class EditAsset extends Component {
                 valueConverter={this.props.valueConverter}
                 transactionQuantityChecker={this.props.transactionQuantityChecker}
             />
-            detailsClass = "edit-asset-menu-item";
-            transactionsClass = "edit-asset-menu-item edit-asset-menu-item-active";
-            sellClass = "edit-asset-menu-item";
-            deleteClass = "edit-asset-menu-item";
+            detailsClass = "popup-menu-item";
+            transactionsClass = "popup-menu-item popup-menu-item-active";
+            sellClass = "popup-menu-item";
+            deleteClass = "popup-menu-item";
         }
 
         if (this.state.page === "Sell") {
@@ -69,10 +70,10 @@ export default class EditAsset extends Component {
                 transactionQuantityChecker={this.props.transactionQuantityChecker}
                 inputDecimalSetter={this.props.inputDecimalSetter}
             />
-            detailsClass = "edit-asset-menu-item";
-            transactionsClass = "edit-asset-menu-item";
-            sellClass = "edit-asset-menu-item edit-asset-menu-item-active";
-            deleteClass = "edit-asset-menu-item";
+            detailsClass = "popup-menu-item";
+            transactionsClass = "popup-menu-item";
+            sellClass = "popup-menu-item popup-menu-item-active";
+            deleteClass = "popup-menu-item";
         }
 
         if (this.state.page === "Delete") {
@@ -84,24 +85,24 @@ export default class EditAsset extends Component {
                 coinFinder={this.props.coinFinder}
                 deleteAsset={this.props.deleteAsset}
             />
-            detailsClass = "edit-asset-menu-item";
-            transactionsClass = "edit-asset-menu-item";
-            sellClass = "edit-asset-menu-item";
-            deleteClass = "edit-asset-menu-item edit-asset-menu-item-active";
+            detailsClass = "popup-menu-item";
+            transactionsClass = "popup-menu-item";
+            sellClass = "popup-menu-item";
+            deleteClass = "popup-menu-item popup-menu-item-active";
         }
 
         return (
-            <div className="edit-asset-background">
-                <div className="edit-asset-popup">
-                    <div className="edit-asset-popup-title">
-                        <p className="edit-asset-popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
+            <div className="popup-background">
+                <div className="popup-foreground">
+                    <div className="popup-title">
+                        <p className="popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
                         <p>Edit Asset - {this.props.coinFinder(this.props.loggedInUser.portfolios[this.props.currentPortfolio].assets[this.props.currentAsset].coin_id).coinName}</p>
                     </div>
-                    <div className="edit-asset-popup-description">
+                    <div className="popup-description">
                         <p>You can see all the details of the current asset and its transactions, or you can sell or delete the asset.</p>
                     </div>
                     <nav>
-                        <ul className="edit-asset-menu-container">
+                        <ul className="popup-menu-container">
                             <li className={detailsClass} onClick={() => this.handleTabChange("Details")}>Details</li>
                             <li className={transactionsClass} onClick={() => this.handleTabChange("Transactions")}>Transactions</li>
                             <li className={sellClass} onClick={() => this.handleTabChange("Sell")}>Sell</li>

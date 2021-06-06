@@ -108,64 +108,64 @@ export default class BuyAsset extends Component {
 
         const portfolioItems = [...this.props.loggedInUser.portfolios[this.props.currentPortfolio].assets]
             .sort(this.props.compareFunction("symbol", true))
-            .map(asset => <div key={asset.coin_id} className="edit-portfolio-asset-item">
-                <div className="edit-portfolio-coin-text-container">
-                    <div className="edit-portfolio-coin-image"><img src={this.props.coinFinder(asset.coin_id).logo} alt={`${this.props.coinFinder(asset.coin_id).symbol} icon`} /></div>
-                    <p className="edit-portfolio-coin-text">{`${this.props.coinFinder(asset.coin_id).symbol}  -  ${asset.current_quantity.toLocaleString('en-GB', { maximumFractionDigits: this.props.coinFinder(asset.coin_id).quantity_scale })}`}</p>
+            .map(asset => <div key={asset.coin_id} className="buy-sell-asset-item">
+                <div className="buy-sell-asset-coin-text-container">
+                    <div className="buy-sell-asset-coin-image"><img src={this.props.coinFinder(asset.coin_id).logo} alt={`${this.props.coinFinder(asset.coin_id).symbol} icon`} /></div>
+                    <p>{`${this.props.coinFinder(asset.coin_id).symbol}  -  ${asset.current_quantity.toLocaleString('en-GB', { maximumFractionDigits: this.props.coinFinder(asset.coin_id).quantity_scale })}`}</p>
                 </div>
             </div>);
 
         return (
             <div>
-                <div className="edit-portfolio-input-container">
-                    <div className="edit-portfolio-input-description">
-                        <h2 className="edit-portfolio-input-description-title">Buy asset</h2>
-                        <p className="edit-portfolio-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Buy asset</h2>
+                        <p className="edit-popup-input-description-text">
                             To buy an asset, select the purchased coin and enter the purchased quantity, the purchase price and the purchase date, then click Buy.
                             </p>
                     </div>
-                    <div className="edit-portfolio-input">
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="ticker-list">Coin</label>
-                            <input type="text" name="ticker-input" className="edit-portfolio-input-field" list="ticker-list"
+                    <div className="edit-popup-input">
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="ticker-list">Coin</label>
+                            <input type="text" name="ticker-input" className="edit-popup-input-field" list="ticker-list"
                                 autoComplete="off" value={this.state.symbol}
                                 onChange={this.handleSymbolInputChange}>
                             </input>
                             <datalist className="ticker-list" id="ticker-list">{symbolList}</datalist>
                         </div>
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="quantity-input">Quantity</label>
-                            <input type="number" name="quantity-input" className="edit-portfolio-input-field" min="0"
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="quantity-input">Quantity</label>
+                            <input type="number" name="quantity-input" className="edit-popup-input-field" min="0"
                                 step={`1e-${this.state.quantity_scale}`}
                                 value={this.state.quantity}
                                 onChange={this.handleQuantityInputChange}
                                 disabled={this.state.disabledInput}>
                             </input>
                         </div>
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="buyprice-input">Price (€)</label>
-                            <input type="number" name="buyprice-input" className="edit-portfolio-input-field" min="0"
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="buyprice-input">Price (€)</label>
+                            <input type="number" name="buyprice-input" className="edit-popup-input-field" min="0"
                                 step={`1e-${this.state.price_scale}`}
                                 value={this.state.price}
                                 onChange={this.handlePriceInputChange}
                                 disabled={this.state.disabledInput}>
                             </input>
                         </div>
-                        <div className="edit-portfolio-input-item">
-                            <label className="edit-portfolio-input-label" htmlFor="buydate-input">Date</label>
-                            <input type="date" name="buydate-input" className="edit-portfolio-input-field" min="2010-01-01"
+                        <div className="edit-popup-input-item">
+                            <label className="edit-popup-input-label" htmlFor="buydate-input">Date</label>
+                            <input type="date" name="buydate-input" className="edit-popup-input-field" min="2010-01-01"
                                 value={this.state.date}
                                 onChange={this.handleDateInputChange}
                                 disabled={this.state.disabledInput}>
                             </input>
                         </div>
                     </div>
-                    <div className="edit-portfolio-asset-container">{portfolioItems}</div>
+                    <div className="buy-sell-asset-container">{portfolioItems}</div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-portfolio-button-container">
-                    <button type="button" className="edit-portfolio-button" onClick={this.handleClickBuyButton}>Buy</button>
-                    <button type="button" className="edit-portfolio-button" onClick={() => this.props.makePopupVisible("BuySellAsset", false)}>Close</button>
+                <div className="popup-button-container">
+                    <button type="button" className="popup-button" onClick={this.handleClickBuyButton}>Buy</button>
+                    <button type="button" className="popup-button" onClick={() => this.props.makePopupVisible("BuySellAsset", false)}>Close</button>
                 </div>
             </div>
         )

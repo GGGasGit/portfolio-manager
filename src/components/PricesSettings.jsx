@@ -28,13 +28,13 @@ export default class PricesSettings extends Component {
     render() {
 
         return (
-            <div className="settings-background">
-                <div className="settings-popup">
-                    <div className="settings-popup-title">
-                        <p className="settings-popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
+            <div className="popup-background">
+                <div className="popup-foreground">
+                    <div className="popup-title">
+                        <p className="popup-title-icon"><i className="fa fa-cog" aria-hidden="true"></i></p>
                         <p>Select Currency</p>
                     </div>
-                    <div className="settings-popup-description">
+                    <div className="popup-description">
                         <p>Click on the Currency dropdown list to select the currency in which the prices on the Prices tab are displayed.</p>
                     </div>
                     <div className="select-currency-container">
@@ -44,9 +44,9 @@ export default class PricesSettings extends Component {
                             <option value="USD">USD</option>
                         </select>
                     </div>
-                    <div className="prices-settings-button-container">
-                        <button type="button" className="prices-settings-button" onClick={this.handleClickOkButton}>OK</button>
-                        <button type="button" className="prices-settings-button" onClick={() => this.props.makePopupVisible("PricesSettings", false)}>Cancel</button>
+                    <div className="popup-button-container">
+                        <button type="button" className="popup-button" onClick={this.handleClickOkButton}>OK</button>
+                        <button type="button" className="popup-button" onClick={() => this.props.makePopupVisible("PricesSettings", false)}>Cancel</button>
                     </div>
                 </div>
             </div>

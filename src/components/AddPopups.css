@@ -1,0 +1,28 @@
+.add-popup-input-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid white;
+}
+
+.add-popup-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.add-popup-name-label {
+    font-size: 1.4rem;
+    padding-right: 1rem;
+}
+
+.add-popup-name-input {
+    font-size: 1.4rem;
+    width: 18rem;
+    padding: 0.4rem;
+}
+
+.add-popup-name-input:focus {
+    outline: none;
+}

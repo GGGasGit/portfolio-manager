@@ -16,13 +16,13 @@ export default class DeleteAsset extends Component {
 
         return (
             <div>
-                <div className="edit-asset-input-container">
-                    <div className="edit-asset-input-description">
-                        <h2 className="edit-asset-input-description-title">Delete asset</h2>
-                        <p className="edit-asset-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Delete asset</h2>
+                        <p className="edit-popup-input-description-text">
                             To delete the asset, click Delete.
                         </p>
-                        <p className="edit-asset-input-description-text warning-text">
+                        <p className="edit-popup-input-description-text warning-text">
                             <span className="warning-text-highlight">Warning:</span><br/>
                             You are about to delete the asset <span className="warning-text-highlight">{this.props.coinFinder(currentAsset.coin_id).coinName}</span> from the portfolio <span className="warning-text-highlight">{currentPortfolio.name}</span>.<br/><br/>
                             You will delete all transactions in this asset from this portfolio.
@@ -32,9 +32,9 @@ export default class DeleteAsset extends Component {
                     </div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-asset-button-container">
-                    <button type="button" className="edit-asset-button" onClick={this.handleClickDeleteButton}>Delete</button>
-                    <button type="button" className="edit-asset-button" onClick={() => this.props.makePopupVisible("EditAsset", false)}>Close</button>
+                <div className="popup-button-container">
+                    <button type="button" className="popup-button" onClick={this.handleClickDeleteButton}>Delete</button>
+                    <button type="button" className="popup-button" onClick={() => this.props.makePopupVisible("EditAsset", false)}>Close</button>
                 </div>
             </div>
         )

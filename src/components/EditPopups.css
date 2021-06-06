@@ -1,0 +1,47 @@
+.edit-popup-input-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid white;
+}
+
+.edit-popup-input-description {
+    padding: 1.2rem
+}
+
+.edit-popup-input-description-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.edit-popup-input-description-text {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+.edit-popup-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-popup-input-item {
+    display: grid;
+    grid-template-columns: 0.8fr 2fr;
+    align-items: center;
+    padding: 0rem 0rem 1rem 1.2rem;
+}
+
+.edit-popup-input-label {
+    font-size: 1.4rem;
+    padding-right: 1rem;
+}
+
+.edit-popup-input-field {
+    font-size: 1.4rem;
+    width: 20rem;
+    padding: 0.6rem;
+}
+
+.edit-popup-input-field:focus {
+    outline: none;
+}

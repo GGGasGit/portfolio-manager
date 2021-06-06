@@ -13,13 +13,13 @@ export default class DeleteWatchlist extends Component {
 
         return (
             <div>
-                <div className="edit-watchlist-input-container">
-                    <div className="edit-watchlist-input-description">
-                        <h2 className="edit-watchlist-input-description-title">Delete watchlist</h2>
-                        <p className="edit-watchlist-input-description-text">
+                <div className="edit-popup-input-container">
+                    <div className="edit-popup-input-description">
+                        <h2 className="edit-popup-input-description-title">Delete watchlist</h2>
+                        <p className="edit-popup-input-description-text">
                             To delete the watchlist, click Delete.
                         </p>
-                        <p className="edit-watchlist-input-description-text warning-text">
+                        <p className="edit-popup-input-description-text warning-text">
                             <span className="warning-text-highlight">Warning:</span><br/>
                             You are about to delete the watchlist <span className="warning-text-highlight">{this.props.loggedInUser.watchlists[this.props.currentWatchlist].name}</span>.<br/><br/>
                             The deletion of the watchlist is permanent, you will not be able to recover
@@ -28,9 +28,9 @@ export default class DeleteWatchlist extends Component {
                     </div>
                     <p className="error-text">{errorMessage}</p>
                 </div>
-                <div className="edit-watchlist-button-container">
-                    <button type="button" className="edit-watchlist-button" onClick={this.handleClickDeleteButton}>Delete</button>
-                    <button type="button" className="edit-watchlist-button" onClick={() => this.props.makePopupVisible("EditWatchlist", false)}>Close</button>
+                <div className="popup-button-container">
+                    <button type="button" className="popup-button" onClick={this.handleClickDeleteButton}>Delete</button>
+                    <button type="button" className="popup-button" onClick={() => this.props.makePopupVisible("EditWatchlist", false)}>Close</button>
                 </div>
             </div>
         )
