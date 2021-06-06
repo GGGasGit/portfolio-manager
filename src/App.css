@@ -253,11 +253,6 @@
 
 .footertext {
   text-align: center;
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  width: 24rem;
-  margin-left: -12rem;
 }
 
 /* MEDIA QUERY */
