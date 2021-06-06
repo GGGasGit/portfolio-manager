@@ -71,15 +71,13 @@ export default class ManageCoins extends Component {
                             To delete a coin from your watchlist, click on the trashcan icon next to the coin you want to delete.
                         </p>
                     </div>
-                    <div className="edit-popup-input">
-                        <div className="edit-popup-input-item">
+                    <div className="edit-popup-input-item">
                             <label className="edit-popup-input-label" htmlFor="ticker-input">Add coin</label>
                             <input type="text" name="ticker-input" className="edit-popup-input-field" list="ticker-list"
                                 autoComplete="off" value={this.state.symbol}
                                 onChange={this.handleSymbolInputChange}>
                             </input>
                             <datalist className="ticker-list" id="ticker-list">{symbolList}</datalist>
-                        </div>
                     </div>
                     <div className="edit-watchlist-coin-container">{watchlistItems}</div>
                     <p className="error-text">{errorMessage}</p>

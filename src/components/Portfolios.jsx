@@ -141,9 +141,9 @@ export default class Portfolios extends Component {
                 <div className="page-menu-settings-container">
                         <p className="page-menu-sign"><i className="fa fa-plus-square" aria-hidden="true" onClick={() => this.props.makePopupVisible("AddPortfolio", true)}></i></p>
                         <p className="page-menu-sign"><i className="fa fa-pencil" aria-hidden="true" onClick={() => this.props.makePopupVisible("EditPortfolio", true)}></i></p>
-                        <select name="portfolio-dropdown" className="page-menu-dropdown" value={this.state.portfolioDropdownValue} onChange={this.handlePortfolioDropdownChange}>{portfolioDropdown}</select>
+                        <select className="page-menu-dropdown" name="portfolio-dropdown" value={this.state.portfolioDropdownValue} onChange={this.handlePortfolioDropdownChange}>{portfolioDropdown}</select>
                         <p className="page-menu-sign"><i className="fa fa-cog" aria-hidden="true" onClick={() => this.props.makePopupVisible("PricesSettings", true)}></i></p>
-                        <p className="page-menu-sign page-menu-question-sign"><i className="fa fa-question-circle" aria-hidden="true" onClick={() => this.props.makePopupVisible("PortfoliosGuide", true)}></i></p>
+                        <p className="page-menu-sign"><i className="fa fa-question-circle" aria-hidden="true" onClick={() => this.props.makePopupVisible("PortfoliosGuide", true)}></i></p>
                 </div>
                 {portfolioTitle}
                 {portfolioTotals(this.props.loggedInUser.portfolios[this.props.currentPortfolio].assets)}

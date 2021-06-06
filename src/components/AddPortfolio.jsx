@@ -15,7 +15,11 @@ export default class AddPortfolio extends Component {
     }
 
     handleClickAddButton = () => {
-        this.props.handleCreateNewPortfolio(this.state.portfolioName);
+        if (this.state.portfolioName === "") {
+            alert('You have to add a name first!')
+        } else {
+            this.props.handleCreateNewPortfolio(this.state.portfolioName);
+        }
     }
 
     handleClickCancelButton = () => {

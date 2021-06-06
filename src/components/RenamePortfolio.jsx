@@ -45,14 +45,12 @@ export default class RenamePortfolio extends Component {
                             To rename the portfolio, edit the name in the Name field, then click Rename.
                         </p>
                     </div>
-                    <div className="edit-popup-input">
-                        <div className="edit-popup-input-item">
-                            <label className="edit-popup-input-label" htmlFor="name-input">Name</label>
-                            <input type="text" name="name-input" className="edit-popup-input-field"
-                                value={this.state.portfolioName}
-                                onChange={this.handleNameInputChange} >
-                            </input>
-                        </div>
+                    <div className="edit-popup-input-item">
+                        <label className="edit-popup-input-label" htmlFor="name-input">Name</label>
+                        <input type="text" name="name-input" className="edit-popup-input-field"
+                            value={this.state.portfolioName}
+                            onChange={this.handleNameInputChange} >
+                        </input>
                     </div>
                     <p className="error-text">{errorMessage}</p>
                 </div>

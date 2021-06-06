@@ -28,7 +28,7 @@
     display: grid;
     grid-template-columns: 0.8fr 2fr;
     align-items: center;
-    padding: 0rem 0rem 1rem 1.2rem;
+    padding: 0rem 1.5rem 1rem 1.2rem;
 }
 
 .edit-popup-input-label {
@@ -38,7 +38,7 @@
 
 .edit-popup-input-field {
     font-size: 1.4rem;
-    width: 20rem;
+    min-width: 20rem;
     padding: 0.6rem;
 }
 

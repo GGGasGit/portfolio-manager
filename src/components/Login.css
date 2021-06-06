@@ -1,7 +1,9 @@
 .login-popup-foreground {
-  padding: 2rem;
-  text-align: center;
-  animation: none;
+    width: 32rem;
+    margin-left: -16rem;
+    padding: 2rem;
+    text-align: center;
+    animation: none;
 }
 
 .login-title {
@@ -35,8 +37,4 @@
 
 .register-text {
     margin-bottom: 1rem;
-}
-
-.error-text {
-    color: rgb(140, 0, 0);
 }

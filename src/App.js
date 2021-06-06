@@ -807,10 +807,6 @@ export default class App extends Component {
     }
   }
 
-  /*checkUserData = () => {
-    console.log(this.state.loggedInUser);
-  }*/
-
   render() {
     let Page = "";
     let pricesClass = "menu-item active-menu-item";
@@ -827,7 +823,6 @@ export default class App extends Component {
     }
     if (this.state.page === "Prices") {
       Page = <Prices makePopupVisible={this.makePopupVisible}
-        //checkUserData={this.checkUserData}
         loggedInUser={this.state.loggedInUser}
         currentWatchlist={this.state.currentIndexes.watchlist}
         setCurrentIndex={this.setCurrentIndex}
@@ -1008,6 +1003,9 @@ export default class App extends Component {
           {editTransactionPopup}
           {Page}
         </main>
+        <footer>
+          <p className="footertext">&copy; Copyright 2021 - gasparads at gmail dot com</p>
+        </footer>
       </div>
     )
   }

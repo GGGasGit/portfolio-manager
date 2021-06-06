@@ -6,7 +6,7 @@
     align-items: center;
     margin-bottom: 0.1rem;
     border-bottom: 0.1rem solid var(--secondary-color);
-    padding: 2rem 3rem 2rem 2rem;
+    padding: 2rem;
 }
 
 .price-item:last-of-type {
@@ -47,9 +47,9 @@
 }
 
 .watchlist-header {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2.2rem 1rem 2.2rem;
     font-size: 1.4rem;
 }
 
@@ -62,4 +62,12 @@
 .watchlist-assets {
     display: flex;
     flex-direction: column;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (min-width: 600px) {
+    .price-item {
+        border-bottom: 0.1rem solid var(--border-color);
+    }
 }

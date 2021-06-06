@@ -15,7 +15,11 @@ export default class AddWatchlist extends Component {
     }
 
     handleClickAddButton = () => {
-        this.props.handleCreateNewWatchlist(this.state.watchlistName);
+        if (this.state.watchlistName === "") {
+            alert('You have to add a name first!')
+        } else {
+            this.props.handleCreateNewWatchlist(this.state.watchlistName);
+        }
     }
 
     handleClickCancelButton = () => {
